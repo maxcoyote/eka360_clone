@@ -1,0 +1,90 @@
+---
+name: case_study
+layout: default
+---
+
+<section id="{{ page.name | downcase }}" class="section--case_study d-flex align-items-center py-5">
+  <div class="container">
+    <div class="row wow fadeIn">
+      <div class="col-12 text-center">
+        <h3 class="text-uppercase">{{ page.title }}</h3>
+        <p class="mb-4">(click to expand)</p>
+      </div>
+    </div>
+    <div class="team-items">
+      {% for project in page.projects %}
+      <div class="team-item">
+        <div class="btn-wrap"><div class="btn btn-close"></div></div>
+        <div class="item-wrap">
+		  		<div class="bg-container">
+            <div class="bg-wrap">
+  		    		<div class="bg normal" style="background-image:url({{ project.image }});"></div>
+			  	  </div>
+          </div>
+          <div class="item-info text-center">
+            {% if project.name.size > 0 %}
+			      <h5 class="name text-uppercase">{{ project.name }}</h5>
+            {% else %}
+            <h5 class="name text-uppercase">{{ project.address }}</h5>
+            {% endif %}
+			    </div>
+			  </div>
+        <div class="bio">
+          {% if project.name.size > 0 %}
+          <h5 class="name text-uppercase">{{ project.name }}</h5>
+          {% endif %}
+          {% if project.address.size > 0 %}
+          <p><strong>Address:</strong> {{ project.address }}</p>
+          {% endif %}
+          {% if project.type.size > 0 %}
+          <p><strong>Type:</strong> {{ project.type }}</p>
+          {% endif %}
+          {% if project.size.size > 0 %}
+          <p><strong>Size:</strong> {{ project.size }}</p>
+          {% endif %}
+          {% if project.neighborhood.size > 0 %}
+          <p><strong>Neighborhood:</strong> {{ project.neighborhood }}</p>
+          {% endif %}
+		    </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% comment %}
+<section id="additional_projects" class="section--additional_projects d-flex align-items-center py-5 text-center">
+  <div class="container">
+    <div class="row wow fadeIn">
+      <div class="col-12 m-auto">
+        <h3 class="text-uppercase">Additional Projects</h3>
+        <p class="mb-4">(hover to learn more)</p>
+      </div>
+    </div>
+    <div class="row wow fadeIn">
+      {% for project in page.additional_projects %}
+      <div class="col-6 col-md-4 col-lg-3 col-xl mx-auto">
+        <div class="thumb-wrapper position-relative">
+          <div class="front">
+            <a role="button"><img src="{{ project.image }}" alt="" class="mw-100 m-auto"></a>
+          </div>
+          <div class="card back">
+            <div class="card-body">
+              {% if project.name.size > 0 %}
+              <h5 class="card-name text-uppercase">{{ project.name }}</h5>
+              <p class="card-text">{{ project.address }}</p>
+              {% else %}
+              <h5 class="card-name text-uppercase">{{ project.address }}</h5>
+              {% endif %}
+              <p class="card-text">{{ project.type }}</p>
+              <p class="card-text">{{ project.size }}</p>
+              <p class="card-text">{{ project.neighborhood }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endcomment %}

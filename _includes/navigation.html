@@ -1,0 +1,32 @@
+<div class="d-none d-lg-flex w-100" id="nav-left">
+  <ul class="navbar-nav navbar-nav--left justify-content-between w-100">
+    {% for item in site.data.navigation limit:3 %}
+    <li class="nav-item">
+      <a href="{{ item.link }}" class="nav-link{% if page.url == item.link %} active{% endif %} text-uppercase">{{ item.name }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+<a class="navbar-brand text-center m-auto" href="/">
+  <img src="{{ '/assets/img/360-logo.png' | relative_url }}" class="navbar-brand-img mw-100" alt="{{ site.name }}"/>
+</a>
+<div class="d-none d-lg-flex w-100">
+  <ul class="navbar-nav navbar-nav--right justify-content-between ml-auto w-100">
+    {% for item in site.data.navigation limit:3 offset:3 %}
+    <li class="nav-item">
+      <a href="{{ item.link }}" class="nav-link{% if page.url == item.link %} active{% endif %} text-uppercase">{{ item.name }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<!-- Mobile -->
+<div class="d-block d-lg-none" id="navbarMobile">
+  <ul class="navbar-nav">
+    {% for item in site.data.navigation %}
+    <li class="nav-item">
+      <a href="{{ item.link }}" class="nav-link{% if page.url == item.link %} active{% endif %} text-uppercase">{{ item.name }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

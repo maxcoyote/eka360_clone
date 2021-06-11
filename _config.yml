@@ -1,0 +1,19 @@
+---
+title: three6ixty
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+name: EKA 360
+markdown: kramdown
+plugins:
+- jekyll-feed
+- jekyll-sitemap
+- jekyll-seo-tag
+sass:
+  load_paths:
+  - _sass

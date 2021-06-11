@@ -1,0 +1,14 @@
+- name: About Us
+  link: /
+- name: Team
+  link: /team
+- name: Services
+  link: /services
+  link: /services
+  link: /
+- name: Case Studies
+  link: /#case_studies
+- name: Media
+  link: /
+- name: Contact
+  link: /contact

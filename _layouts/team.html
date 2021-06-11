@@ -1,0 +1,47 @@
+---
+title: team
+layout: default
+---
+
+<section id="team" class="section--team py-5">
+  <div class="container">
+    <div class="row wow fadeIn">
+      <div class="col-12 text-center">
+        <h3 class="text-uppercase mb-4">{{ page.title }}</h3>
+      </div>
+    </div>
+    <!-- <div class="toggle-container">
+    	<div class="dotted x"></div>
+    	<div class="basic-toggle">
+    		<div class="toggle-label left is-active"><span class="normal">Pro Mode</span><span class="bold">Pro Mode</span></div>
+        <div class="toggle-label right"><span class="normal">Zoom Mode</span><span class="bold">Zoom Mode</span></div>
+    	</div>
+    </div> -->
+    <div class="team-items">
+      {% for team in page.team %}
+      <div class="team-item">
+        <div class="btn-wrap"><div class="btn btn-close"></div></div>
+        <div class="item-wrap">
+		  		<div class="bg-container">
+            <div class="bg-wrap">
+  		    		<div class="bg normal" style="background-image:url({{ team.image }});"></div>
+              <div class="bg zoom" style="background-image:url({{ team.image_zoom }});"></div>
+  						<div class="overlay"></div>
+  			  	</div>
+          </div>
+			    <div class="item-info text-center">
+			      <h5 class="name text-uppercase">{{ team.name }}</h5> <span class="title">{{ team.position }}</span>
+            <p>{{ team.title }}</p>
+            <p class="small"><a href="mailto:{{ team.email }}" class="text-muted">{{ team.email }}</a></p>
+            <p class="small text-muted">{{ team.phone }}</p>
+			    </div>
+			  </div>
+        <div class="bio">
+		    	<h5 class="name text-uppercase">{{ team.name }}</h5> <span class="title">{{ team.position }}</span>
+		    	<span class="bio-content text">{{ team.bio_text }}</span>
+		    </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

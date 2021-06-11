@@ -1,0 +1,117 @@
+---
+title: home
+layout: default
+---
+
+<section id="hero" class="jarallax section--hero d-flex align-items-center py-5 text-center" style="background: url({{ '/assets/img/hero-bg.jpg' | relative_url }}) no-repeat center center/cover;">
+  <div class="container">
+    <div class="row wow bounceInDown">
+      <div class="col-12 text-center">
+        <h1 class="display-4 text-white">Planning <span>Done Differently</span></h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="intro" class="section--intro d-flex align-items-center py-5 text-center">
+  <div class="container">
+    <div class="row wow fadeIn">
+      <div class="col-12 col-lg-10 col-xl-8 m-auto text-center">
+        <p>A successful venture starts with having experts on your side. Our team will support you through every stage of your project, from due diligence to project completion.</p>
+        <a href="/#contact" class="btn btn-primary btn-lg mt-5">Let's Collaborate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section--services py-5">
+  <div class="container">
+    <div class="row wow slideInUp">
+      {% for main in page.main %}
+      <div class="col-md-3 mb-4 mb-md-0 text-center">
+        <h3 class="text-uppercase">{{ main.headline }}</h3>
+        <img src="{{ main.image }}" alt="Guidance" class="w-50 mb-2 wow">
+        <p>{{ main.text }}</p>
+      </div>
+      {% endfor %}
+      <!-- <div class="col-md-3 mb-4 mb-md-0 text-center">
+        <h3 class="text-uppercase">Planning</h3>
+        <img src="{{ '/assets/img/service-2.jpg' | relative_url }}" alt="Planning" class="w-50 mb-2 wow">
+        <p>Let us read the fine print. We can provide extensive market analysis and assist you with everything from environmental clearance to land use planning.</p>
+      </div>
+      <div class="col-md-3 mb-4 mb-md-0 text-center">
+        <h3 class="text-uppercase">Outreach</h3>
+        <img src="{{ '/assets/img/service-3.jpg' | relative_url }}" alt="Outreach" class="w-50 mb-2 wow">
+        <p>Ensure your community welcomes you with open arms by letting us organize neighborhood gatherings and social media campaigns.</p>
+      </div>
+      <div class="col-md-3 mb-4 mb-md-0 text-center">
+        <h3 class="text-uppercase">Service</h3>
+        <img src="{{ '/assets/img/service-4.jpg' | relative_url }}" alt="Service" class="w-50 mb-2 wow">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel elit justo. Nunc vestibulum leo ut consectetur tristique. Cras laoreet.</p>
+      </div> -->
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <a href="/services" class="btn btn-primary btn-lg mt-5">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include case_studies_show.html %}
+
+<section id="clients" class="section--clients bg-primary py-5">
+  <div class="container">
+    <div class="row wow fadeIn">
+      <div class="col-12 col-xl-10 m-auto text-center">
+        <h2 class="text-white text-uppercase m-auto">A Track Record of Excellence with World-Class Clients</h2>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row wow slideInUp">
+      <div class="col-12 text-center">
+        <!-- <img src="{{ '/assets/img/clients.png' | relative_url }}" class="mw-100"> -->
+        <ul class="list-unstyled d-flex flex-wrap justify-content-center">
+          {% for client in page.clients %}
+          <li class="col-6 col-md-4 d-flex align-items-center">
+            <img src="{{ client.image }}" alt="" class="mw-100 m-auto">
+          </li>
+          <!-- <li class="col-6 col-md-4 d-flex align-items-center">
+            <img src="{{ '/assets/img/hollywood-intl.png' | relative_url }}" alt="" class="mw-100 m-auto">
+          </li>
+          <li class="col-6 col-md-4 d-flex align-items-center">
+            <img src="{{ '/assets/img/jewish-federation.png' | relative_url }}" alt="" class="mw-100 m-auto">
+          </li>
+          <li class="col-6 col-md-4 d-flex align-items-center">
+            <img src="{{ '/assets/img/thomas-safran.png' | relative_url }}" alt="" class="mw-100 m-auto">
+          </li>
+          <li class="col-6 col-md-4 d-flex align-items-center">
+            <img src="{{ '/assets/img/bolour-associates.png' | relative_url }}" alt="" class="mw-100 m-auto">
+          </li>
+          <li class="col-6 col-md-4 d-flex align-items-center">
+            <img src="{{ '/assets/img/meta-housing-corp.png' | relative_url }}" alt="" class="mw-100 m-auto">
+          </li>
+          <li class="col-6 col-md-4 d-flex align-items-center">
+            <img src="{{ '/assets/img/cgi.png' | relative_url }}" alt="" class="mw-100 m-auto">
+          </li>
+          <li class="col-6 col-md-4 d-flex align-items-center">
+            <img src="{{ '/assets/img/aragon.png' | relative_url }}" alt="" class="mw-100 m-auto">
+          </li>
+          <li class="col-6 col-md-4 d-flex align-items-center">
+            <img src="{{ '/assets/img/rse.png' | relative_url }}" alt="" class="mw-100 m-auto">
+          </li>
+          <li class="col-6 col-md-4 d-flex align-items-center">
+            <img src="{{ '/assets/img/rbm.png' | relative_url }}" alt="" class="mw-100 m-auto">
+          </li>
+          <li class="d-flex align-items-center">
+            <img src="{{ '/assets/img/whchc.png' | relative_url }}" alt="" class="mw-100 m-auto">
+          </li> -->
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include contact_show.html %}
